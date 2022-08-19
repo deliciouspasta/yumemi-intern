@@ -1,0 +1,72 @@
+version: '3.8'
+
+x-template: &flyway-template
+  image: flyway/flyway:6.5.5
+  volumes:
+    - ./flyway/sql:/flyway/sql
+    - ./flyway/conf:/flyway/conf
+services:
+  app:
+    container_name: app-apis
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: app-api
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/app
+    environment:
+      spring.datasource.primary.url: "jdbc:mysql://database:3306/db"
+      spring.datasource.primary.username: "root"
+      spring.datasource.prymary.password: "root"
+      spring.datasource.prymary.driver-class-name: "com.mysql.jdbc.Driver"
+      spring.flyway.enable: "false"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    depends_on:
+      - database
+
+  database:
+    container_name: database
+    image: mysql:5.7
+    restart: always
+    ports:
+      - 3306:3306
+    command:
+      --port 3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=db
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=password
+    volumes:
+      - /var/lib/mysql
+      - /docker-entrypoint-initdb.datasource
+
+  flyway-clean:
+    <<: *flyway-template
+    environment:
+      - FLYWAY_URL=jdbc:mysql://database:3306/db
+    command: clean
+
+  flyway-migrate:
+    <<: *flyway-template
+    environment:
+      - FLYWAY_URL=jdbc:mysql://database:3306/db
+    command: migrate
+
+  flyway-info:
+    <<: *flyway-template
+    environment:
+      - FLYWAY_URL=jdbc:mysql://database:3306/db
+    command: info
+
+  flyway-repair:
+    <<: *flyway-template
+    environment:
+      - FLYWAY_URL=jdbc:mysql://database:3306/db
+    command: repair
