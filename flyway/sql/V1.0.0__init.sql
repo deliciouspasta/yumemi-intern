@@ -45,11 +45,49 @@ CREATE TABLE likes(
    COLLATE = utf8mb4_unicode_ci
  ;
 
-insert into users values(1,"taro","", "taro@mail.com", "fh83y4hnuthija89fdsa", "2022-08-19"),
-(2,"Jiro","", "Jiro@mail.com", "fjajfieue883884", "2022-08-20");
 
-insert into posts values(1,1,"私は太郎です！", "2022-08-19 13:00"),
-(2,2,"私は次郎です！", "2022-08-19 14:00");
-
-insert into likes values(1,2,"2022-08-19 13:00"),
-(2,2,"2022-08-19 14:00");
+--データ追加
+INSERT into users
+VALUES(
+    1,
+    "taro",
+    "",
+    "taro@mail.com",
+    "fh83y4hnuthija89fdsa",
+    "2022-08-19"
+),
+(
+    2,
+    "Jiro",
+    "",
+    "Jiro@mail.com",
+    "fjajfieue883884",
+    "2022-08-20"
+)
+;
+INSERT into posts
+VALUES(
+    1,
+    1,
+    "私は太郎です！",
+    "2022-08-19 13:00"
+),
+(
+    2,
+    2,
+    "私は次郎です！",
+    "2022-08-19 14:00"
+)
+;
+INSERT into likes
+VALUES(
+    1,
+    2,
+    "2022-08-19 13:00"
+),
+(
+    2,
+    2,
+    "2022-08-19 14:00"
+)
+;
