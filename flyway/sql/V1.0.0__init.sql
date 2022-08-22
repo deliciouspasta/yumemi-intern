@@ -47,7 +47,7 @@ CREATE TABLE likes(
 
 
 --データ追加
-INSERT into users
+INSERT INTO users
 VALUES(
     1,
     "taro",
@@ -65,7 +65,7 @@ VALUES(
     "2022-08-20"
 )
 ;
-INSERT into posts
+INSERT INTO posts
 VALUES(
     1,
     1,
@@ -79,7 +79,7 @@ VALUES(
     "2022-08-19 14:00"
 )
 ;
-INSERT into likes
+INSERT INTO likes
 VALUES(
     1,
     2,
