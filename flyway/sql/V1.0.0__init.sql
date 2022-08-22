@@ -7,7 +7,7 @@ CREATE TABLE users(
     display_name                varchar(32),
     email                       varchar(64) NOT NULL,
     password                    varchar(42) NOT NULL,
-    created_at datetime         NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    created_at                  datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (user_id)
 )ENGINE = InnoDB
    DEFAULT CHARSET = utf8mb4
@@ -45,8 +45,8 @@ CREATE TABLE likes(
    COLLATE = utf8mb4_unicode_ci
  ;
 
-insert into users values(1,"@taro","", "taro@mail.com", "fh83y4hnuthija89fdsa", "2022-08-19"),
-(2,"@Jiro","", "Jiro@mail.com", "fjajfieue883884", "2022-08-20");
+insert into users values(1,"taro","", "taro@mail.com", "fh83y4hnuthija89fdsa", "2022-08-19"),
+(2,"Jiro","", "Jiro@mail.com", "fjajfieue883884", "2022-08-20");
 
 insert into posts values(1,1,"私は太郎です！", "2022-08-19 13:00"),
 (2,2,"私は次郎です！", "2022-08-19 14:00");
