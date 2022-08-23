@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World</title>
+</head>
+<body>
+<p th:text="${message}"></p>
+</body>
+</html>
+
+<!--<!DOCTYPE html>-->
+<!--<html xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <meta charset="utf-8" />-->
+<!--    <title>リスト</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<div class="container">-->
+<!--    <h1>リスト</h1>-->
+<!--    <table class="table">-->
+<!--        <thead>-->
+<!--        <tr>-->
+<!--            <th>ユーザーID</th>-->
+<!--            <th>ログインID</th>-->
+<!--            <th>表示名</th>-->
+<!--            <th>メールアドレス</th>-->
+<!--            <th>パスワード</th>-->
+<!--            <th>作成日時</th>-->
+<!--            <th></th>-->
+<!--            <th></th>-->
+<!--            <th></th>-->
+<!--        </tr>-->
+<!--        </thead>-->
+<!--        <tbody>-->
+
+<!--        <tr th:each="user:${users}" th:object="${user}">-->
+
+<!--            <td th:text="*{user_id}"></td>-->
+<!--            <td th:text="*{login_id}"></td>-->
+<!--            <td th:text="*{display_name}"></td>-->
+<!--            <td th:text="*{email}"></td>-->
+<!--            <td th:text="*{password}"></td>-->
+<!--            <td th:text="*{created_at}"></td>-->
+
+<!--        </tr>-->
+<!--        </tbody>-->
+<!--    </table>-->
+<!--</div>-->
+<!--</body>-->
+<!--</html>-->
