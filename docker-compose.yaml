@@ -46,6 +46,7 @@ services:
     volumes:
       - /var/lib/mysql
       - /docker-entrypoint-initdb.datasource
+      - ./my.cnf:/etc/my.cnf
 
   flyway-clean:
     <<: *flyway-template
