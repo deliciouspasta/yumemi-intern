@@ -1,5 +1,5 @@
 ### DB起動
-docker-compose -up d db
+docker-compose up -d database
 
 ### マイグレーション
 docker-compose run --rm  flyway-migrate
@@ -11,4 +11,4 @@ docker-compose run --rm flyway-info
 docker-compose run --rm flyway-clean
 
 ### service起動(javaビルド後)
-docker-compose -up d app
+docker-compose up -d app
