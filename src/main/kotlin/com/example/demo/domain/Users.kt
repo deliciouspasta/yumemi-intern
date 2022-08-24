@@ -11,13 +11,20 @@ import javax.persistence.Table
 data class Users(
     @Id
     @GeneratedValue
-    val userId: Int = 0,
+    val userId: Int,
 
-    @Column(name = "login_id")
-    val loginId: String = "",
+    @Column(nullable = false)
+    val loginId: String,
 
-    val displayName: String = "",
-    val email: String = "",
-    val password: String = "",
-    val createdAt: String? = ""
+    @Column(nullable = false)
+    val displayName: String,
+
+    @Column(nullable = false)
+    val email: String,
+
+    @Column(nullable = false)
+    val password: String,
+
+    @Column(nullable = false)
+    val createdAt: String
 )

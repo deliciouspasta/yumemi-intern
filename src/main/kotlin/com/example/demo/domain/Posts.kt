@@ -1,5 +1,6 @@
 package com.example.demo.domain
 
+import java.sql.Timestamp
 import javax.persistence.Column
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue
@@ -16,12 +17,15 @@ import javax.persistence.Table
 data class Posts(
     @Id
     @GeneratedValue
-    @Column(name = "post_id")
-    val postId: Int = 0,
+    @Column(nullable = false)
+    val postId: Int,
 
-    @Column(name = "user_id")
-    val userId: Int = 0,
+    @Column(nullable = false)
+    val userId: Int,
 
-    val text: String = "",
-    val createdAt: String = "",
+    @Column(nullable = false)
+    val text: String,
+
+    @Column(nullable = false)
+    val createdAt: String
 )
