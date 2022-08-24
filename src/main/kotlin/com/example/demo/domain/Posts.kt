@@ -1,12 +1,13 @@
 package com.example.demo.domain
 
-import lombok.Getter
-import org.hibernate.annotations.Fetch
-import org.hibernate.annotations.FetchMode
-import javax.persistence.*
+import javax.persistence.Column
+import javax.persistence.Entity
+import javax.persistence.GeneratedValue
+import javax.persistence.Id
+import javax.persistence.NamedEntityGraph
+import javax.persistence.Table
 
 @Entity
-@Getter
 @Table(name = "posts")
 @NamedEntityGraph(
     name = "users_login_id",
@@ -16,9 +17,11 @@ data class Posts(
     @Id
     @GeneratedValue
     @Column(name = "post_id")
-    val post_id: Int? = null,
+    val postId: Int = 0,
+
     @Column(name = "user_id")
-    val user_id: Int? = null,
-    val text: String? = null,
-    val created_at: String? = null,
+    val userId: Int = 0,
+
+    val text: String = "",
+    val createdAt: String = "",
 )
