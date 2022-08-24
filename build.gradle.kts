@@ -16,9 +16,36 @@ repositories {
 }
 
 dependencies {
+	implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
+	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("org.springframework.boot:spring-boot-starter")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+//	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+
+//	implementation("org.mybatis:mybatis:3.5.6")
+//	implementation("org.mybatis.dynamic-sql:mybatis-dynamic-sql:1.2.1")
+	implementation("mysql:mysql-connector-java:8.0.23")
+//	mybatisGenerator("org.mybatis.generator:mybatis-generator-core:1.4.0")
+
+//	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+//
+	implementation("mysql:mysql-connector-java:8.0.23")
+
+	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+	implementation("org.springframework.boot:spring-boot-devtools")
+	implementation("org.projectlombok:lombok")
+	implementation("org.springframework.boot:spring-boot-starter-tomcat")
+
+//
+//	implementation("org.mybatis.spring.boot:mybatis-spring-boot-starter:2.1.4")
+//
+//	implementation("org.mybatis.dynamic-sql:mybatis-dynamic-sql:1.2.1")
+//	mybatisGenerator("org.mybatis.generator:mybatis-generator-core:1.4.0")
+//
+//	implementation("org.springframework.boot:spring-boot-starter-security")
+//
+//
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
