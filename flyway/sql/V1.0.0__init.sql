@@ -45,8 +45,7 @@ CREATE TABLE likes(
    COLLATE = utf8mb4_unicode_ci
  ;
 
-
---データ追加
+-- データの挿入
 INSERT INTO users
 VALUES(
     1,
@@ -77,6 +76,34 @@ VALUES(
     2,
     "私は次郎です！",
     "2022-08-19 14:00"
+)
+;
+INSERT INTO posts
+VALUES(
+    3,
+    1,
+    "今日は北海道に行きました！",
+    "2022-08-21 13:00"
+),
+(
+    4,
+    2,
+    "勉強頑張るぞ！",
+    "2022-08-22 14:00"
+)
+;
+INSERT INTO posts
+VALUES(
+    5,
+    1,
+    "おはようございます",
+    "2022-08-23 13:00"
+),
+(
+    6,
+    2,
+    "今日はラーメンを食べました！",
+    "2022-08-24 14:00"
 )
 ;
 INSERT INTO likes
