@@ -2,6 +2,7 @@ package com.example.demo.controller
 
 import com.example.demo.domain.Users
 import com.example.demo.service.UsersService
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.*
@@ -13,5 +14,16 @@ class UsersController(private val usersService: UsersService) {
     fun index(model: Model): String {
         model.addAttribute("users", usersService.findAll())
         return "index"
+    }
+
+//    新規ユーザー登録（ハッシュ化されたパスワードでないとSpring Securityがパスワードを受け付けないため）
+    @GetMapping("/create")
+    fun post() {
+        val password = "123456"
+        val passwordEncoder = BCryptPasswordEncoder()
+        val digest = passwordEncoder.encode(password)
+        val user = Users(4, "Siro", "", "siro@mail.com", digest,"2022-08-26-15:00:00")
+
+        usersService.save(user)
     }
 }

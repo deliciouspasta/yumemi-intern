@@ -6,7 +6,7 @@ CREATE TABLE users(
     login_id                    varchar(32) NOT NULL UNIQUE,
     display_name                varchar(32),
     email                       varchar(64) NOT NULL,
-    password                    varchar(42) NOT NULL,
+    password                    varchar(64) NOT NULL,
     created_at                  datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (user_id)
 )ENGINE = InnoDB
