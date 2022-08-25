@@ -11,7 +11,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
 
 @EnableWebSecurity
-class SecurityConfig @Autowired constructor(private val usersRepository: UsersRepository) :
+class SecurityConfig(private val usersRepository: UsersRepository) :
     WebSecurityConfigurerAdapter() {
 
     override fun configure(http: HttpSecurity) {
