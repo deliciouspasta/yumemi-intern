@@ -13,7 +13,7 @@ import javax.persistence.Table
 @Table(name = "users")
 data class Users(
     @Id
-//    @GeneratedValue
+    @GeneratedValue
     val userId: Int? = null,
 
     @Column(nullable = false)
