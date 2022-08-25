@@ -6,5 +6,5 @@ import com.example.demo.repository.UsersRepository
 
 @Service
 class UsersService(private val usersRepository: UsersRepository) {
-    fun findAll() = usersRepository.findAll()
+//    fun findAll() = usersRepository.findAll()
 }
