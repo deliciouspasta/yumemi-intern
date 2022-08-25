@@ -1,19 +1,45 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
     <meta charset="utf-8"/>
     <title>トップページ</title>
 </head>
-<body>
-<div style="text-align:center">
-    <h1>トップページ</h1>
-    <h2><a th:href="@{/home}">タイムラインへ</a></h2>
-    <div sec:authorize="isAuthenticated()">
-        <h2><a th:href="@{/home}">ログイン画面へ</a></h2>
+<header class="sticky-top">
+    <div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary mt-3 p-3">
+            <h1 style="color : white">Intern@Yumemi</h1>
+        </nav>
     </div>
-    <div sec:authorize="isAnonymous()">
-        <h2><a th:href="@{/login}">ログイン画面へ</a></h2>
+</header>
+<body>
+<div class="position-absolute top-50 start-50 translate-middle">
+    <div class="card mx-auto text-center" style="width: 36rem;">
+        <h5 class="card-header mb-5">Webアプリへようこそ！</h5>
+
+        <div class="card-body mb-5">
+            <div sec:authorize="isAuthenticated()">
+                <button type="button" class="btn btn-outline-primary mb-5" onclick="location.href='/home'"
+                        style="width: 24rem;">ログイン
+                </button>
+            </div>
+            <div sec:authorize="isAnonymous()">
+                <button type="button" class="btn btn-outline-primary text-align:center mb-5"
+                        onclick="location.href='/login'" style="width: 24rem;">ログイン
+                </button>
+            </div>
+            <button type="button" class="btn btn-outline-primary" onclick="location.href='/home'"
+                    style="width: 24rem;">タイムラインを見る
+            </button>
+        </div>
     </div>
 </div>
 </body>
+<footer class="fixed-bottom">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary mt-3 p-3"></nav>
+</footer>
 </html>
