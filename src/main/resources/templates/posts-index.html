@@ -13,14 +13,19 @@
 
 <div class="container">
     <h1>タイムライン</h1>
-    <table class="table">
-        <thead>
-        <tr>
-            <th>
-                <p>ログイン中 @<span sec:authentication="principal.loginId"></span>さん</p>
-            </th>
-        </tr>
-    </table>
+    <div sec:authorize="isAuthenticated()">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>
+                    <p>ログイン中 @<span sec:authentication="principal.loginId"></span>さん</p>
+                </th>
+            </tr>
+        </table>
+        <form role="form" id="logout" th:action="@{/logout}" method="post">
+            <button type="submit">ログアウト</button>
+        </form>
+    </div>
     <table class="table">
         <thead>
         <tr>
