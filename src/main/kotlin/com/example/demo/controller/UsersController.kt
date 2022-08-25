@@ -15,15 +15,4 @@ class UsersController(private val usersService: UsersService) {
         model.addAttribute("users", usersService.findAll())
         return "index"
     }
-
-//    新規ユーザー登録（ハッシュ化されたパスワードでないとSpring Securityがパスワードを受け付けないため）
-    @GetMapping("/create")
-    fun post() {
-        val password = "123456"
-        val passwordEncoder = BCryptPasswordEncoder()
-        val digest = passwordEncoder.encode(password)
-        val user = Users(4, "Siro", "", "siro@mail.com", digest,"2022-08-26-15:00:00")
-
-        usersService.save(user)
-    }
 }

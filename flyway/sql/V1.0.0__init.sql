@@ -62,6 +62,14 @@ VALUES(
     "Jiro@mail.com",
     "fjajfieue883884",
     "2022-08-20"
+),
+(
+    3,
+    "Saburo",
+    "",
+    "Saburo@mail.com",
+    "$2a$10$4KEopINMMe3ICEeNbBLvwuIcHBGu2PBEx9teTLhs.Kezx6R7JcEg2",
+    "2022-08-21"
 )
 ;
 INSERT INTO posts

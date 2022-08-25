@@ -16,7 +16,7 @@ class SecurityConfig @Autowired constructor(private val usersRepository: UsersRe
 
     override fun configure(http: HttpSecurity) {
         http.authorizeRequests()
-            .mvcMatchers("/login","/users","/create").permitAll()
+            .mvcMatchers("/login","/users").permitAll()
             .anyRequest().authenticated()
             .and()
 
