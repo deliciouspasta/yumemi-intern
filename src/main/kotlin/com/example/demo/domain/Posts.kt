@@ -1,9 +1,9 @@
 package com.example.demo.domain
 
-import java.sql.Timestamp
 import javax.persistence.Column
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue
+import javax.persistence.GenerationType
 import javax.persistence.Id
 import javax.persistence.NamedEntityGraph
 import javax.persistence.Table
@@ -16,7 +16,7 @@ import javax.persistence.Table
 )
 data class Posts(
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
     val postId: Int,
 

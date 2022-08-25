@@ -6,7 +6,7 @@ CREATE TABLE users(
     login_id                    varchar(32) NOT NULL UNIQUE,
     display_name                varchar(32),
     email                       varchar(64) NOT NULL,
-    password                    varchar(42) NOT NULL,
+    password                    varchar(64) NOT NULL,
     created_at                  datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (user_id)
 )ENGINE = InnoDB
@@ -62,12 +62,20 @@ VALUES(
     "Jiro@mail.com",
     "fjajfieue883884",
     "2022-08-20"
+),
+(
+    3,
+    "Saburo",
+    "",
+    "Saburo@mail.com",
+    "$2a$10$4KEopINMMe3ICEeNbBLvwuIcHBGu2PBEx9teTLhs.Kezx6R7JcEg2",
+    "2022-08-21"
 )
 ;
 INSERT INTO posts
 VALUES(
     1,
-    1,
+    2,
     "私は太郎です！",
     "2022-08-19 13:00"
 ),
