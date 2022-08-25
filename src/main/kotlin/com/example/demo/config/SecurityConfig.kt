@@ -20,7 +20,9 @@ class SecurityConfig(private val usersRepository: UsersRepository) :
 
         http.formLogin()
             .usernameParameter("loginId").passwordParameter("password")
+            .defaultSuccessUrl("/home")
             .and()
+            .logout().logoutSuccessUrl("/").permitAll()
     }
 
     override fun configure(auth: AuthenticationManagerBuilder) {
