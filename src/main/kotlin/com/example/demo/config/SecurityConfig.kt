@@ -14,13 +14,15 @@ class SecurityConfig(private val usersRepository: UsersRepository) :
 
     override fun configure(http: HttpSecurity) {
         http.authorizeRequests()
-            .mvcMatchers("/login","/users").permitAll()
+            .mvcMatchers("/","/login","/users","/home").permitAll()
             .anyRequest().authenticated()
             .and()
 
         http.formLogin()
             .usernameParameter("loginId").passwordParameter("password")
+            .defaultSuccessUrl("/home")
             .and()
+            .logout().logoutSuccessUrl("/").permitAll()
     }
 
     override fun configure(auth: AuthenticationManagerBuilder) {
